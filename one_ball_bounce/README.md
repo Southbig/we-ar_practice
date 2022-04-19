@@ -122,3 +122,23 @@ export class Ball {
   - max는 canvas의 width 이지만 마찬가지로 원이 정상적으로 화면 안에서 튕기게 보이려면 원의 반지름을 빼줘야한다
   - vx,vy는 각각 원의 중심축인 x,y축에 더해지면서 공이 움직이도록 보인다
     여기서 -1값을 곱셈하면 원래 진행하던(x,y 포함) 반대방향으로 공이 진행하게 된다
+
+# 공여러개 만들기
+
+```
+    this.balls = [];
+    for (let i = 0; i < 20; i++) {
+      this.ball = new Ball(this.stageWidth, this.stageHeight, Math.random() * i + 15, Math.random() * i + 10);
+      this.balls.push(this.ball)
+    }
+```
+
+```
+  animate = () => {
+    window.requestAnimationFrame(this.animate);
+    this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+    for (let i = 0; i < 20; i++) {
+      this.balls[i].draw(this.ctx, this.stageWidth, this.stageHeight);
+    }
+  }
+```
