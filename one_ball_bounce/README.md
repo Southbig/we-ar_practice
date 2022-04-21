@@ -188,5 +188,5 @@ g1은 g2와의 충돌만을 g2는 g1과의 충돌만을 계산했기 때문에 �
 
 ## 참고
 
-[Elastic collision](https://en.wikipedia.org/wiki/Elastic_collision)
+[Elastic collision](https://en.wikipedia.org/wiki/Elastic_collision) </br>
 [n-body problem](https://en.wikipedia.org/wiki/N-body_problem)
