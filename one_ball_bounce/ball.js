@@ -16,6 +16,19 @@ export class Ball {
     this.y = Math.random() * (stageHeight - (diameter))
   }
 
+  vector() {
+    return Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+  }
+
+  theta() {
+    return Math.atan2(this.vy, this.vx);
+  }
+
+  update(vx, vy) {
+    this.vx = vx;
+    this.vy = vy;
+  }
+
   draw(ctx, stageWidth, stageHeight) {
 
     this.x += this.vx;
@@ -23,6 +36,7 @@ export class Ball {
     ctx.fillstyle = '#f5f5f5'
 
     this.bounce(stageWidth, stageHeight);
+    // this.check()
 
     ctx.beginPath(); // 새로운 경로를 만든다
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI); // 원을 그린다
@@ -35,13 +49,7 @@ export class Ball {
     this.maxX = stageWidth - this.radius;
     this.maxY = stageHeight - this.radius;
 
-    // if (this.x <= this.minX || this.x >= this.maxX) {
-    //   this.vx = this.vx * -1;
-    //   this.x = this.x + this.vx;
-    // } else if (this.y <= this.minY || this.y >= this.maxY) {
-    //   this.vy = this.vy * -1;
-    //   this.y = this.y + this.vy
-    // }
+
     if (this.x <= this.minX || this.x >= this.maxX) {
       this.vx *= -1;
       this.x += this.vx;
