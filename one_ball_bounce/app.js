@@ -91,7 +91,6 @@ class App {
     // for (let i = 0; i < 20; i++) {
     //   this.balls[i].draw(this.ctx, this.stageWidth, this.stageHeight);
     // }
-    // this.ball.draw(this.ctx, this.stageWidth, this.stageHeight);
     for (let i = 0; i < this.balls.length; i++) {
       const ball_1 = this.balls[i];
 
@@ -105,8 +104,8 @@ class App {
           if (d <= ball_1.radius + ball_2.radius) {
             const r = Math.atan2(ball_1.y - ball_2.y, ball_1.x - ball_2.x);
 
-            const m1 = 10
-            const m2 = 10
+            const m1 = 5
+            const m2 = 5
 
             const v1 = ball_1.vector();
             const v2 = ball_2.vector();
@@ -145,7 +144,6 @@ class App {
       }
       this.balls[i].draw(this.ctx, this.stageWidth, this.stageHeight);
     }
-
   }
 
 }

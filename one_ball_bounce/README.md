@@ -54,7 +54,7 @@ window.onload = () => {
 - 공을 움직이기 위해 window.requestAnimationFrame(this.animate)로 설정해주고 animate()함수를 만들어주도록 한다
 - **animate 메서드는 최대 1ms(1/1000s)로 제한되며 1초에 60번을 동작하게 된다**
 
-# ball.js
+## ball.js
 
 ```
 export class Ball {
@@ -123,6 +123,10 @@ export class Ball {
   - vx,vy는 각각 원의 중심축인 x,y축에 더해지면서 공이 움직이도록 보인다
     여기서 -1값을 곱셈하면 원래 진행하던(x,y 포함) 반대방향으로 공이 진행하게 된다
 
+## 참고
+
+[순수한 자바스크립트를 이용한 2D 벽돌깨기 게임](https://developer.mozilla.org/ko/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)
+
 # 공여러개 만들기
 
 ```
@@ -152,24 +156,19 @@ export class Ball {
 
 <img width="830" alt="스크린샷 2022-04-21 오후 3 16 33" src="https://user-images.githubusercontent.com/83868259/164434557-8873d4dd-6f47-4e0b-9133-66d4745a8581.png">
 
-
 충돌 조건은 `r1 + r2 < D1` 이다
 
-
 <img width="390" alt="스크린샷 2022-04-21 오후 3 19 23" src="https://user-images.githubusercontent.com/83868259/164434614-00cf8a4a-a560-4384-9f91-0caa778e1bb9.png">
-
 
 충돌의 여부는 두 물체의 반지름 값을 합한 수치가 두 물체의 중심점 좌표간의 거리보다 작으면 충돌로 인식한다
 
 ![스크린샷 2022-04-21 오후 3 22 47](https://user-images.githubusercontent.com/83868259/164434664-961fdc65-b072-4159-81a8-2f7c94ca9a45.png)
-
 
 충돌이 발생했을때 M(질량변수)과 V(가속도 변수) 그리고 COR(반발계수)를 이용하여 반사각 계산 알고리즘이 실행된다
 
 ## 충돌시 발생 문제
 
 ![스크린샷 2022-04-21 오후 3 23 07](https://user-images.githubusercontent.com/83868259/164434715-1d7d23c9-d1b2-43a2-a9a4-7690b54664e8.png)
-
 
 반복문으로 진행된다면 한 개의 물체씩 충돌 연산을 진행하게 된다
 
@@ -179,7 +178,6 @@ export class Ball {
 3개 이상의 물체가 동시에 충돌 할 때 이미 각각의 물체들은 충돌 한 하나의 물체에 대해서만 충돌계산을 하고 그 이후 간섭되는 힘에 대해서는 계산을 하지 않는다
 
 ![스크린샷 2022-04-21 오후 3 23 34](https://user-images.githubusercontent.com/83868259/164434751-a3896c38-a7a1-4d23-951f-da7b52261b37.png)
-
 
 3개 이상의 물체가 충돌시 해결 점은,
 **g1은 g2와의 충돌 연산을 마치고 g3와의 충돌을 감지하여 방금전의 속도에 간섭을 발생시켜야 한다**
