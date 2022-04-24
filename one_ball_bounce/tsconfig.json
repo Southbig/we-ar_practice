@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES5",
+    "outDir": "./dist",
+    "moduleResolution": "Node",
+    "strict": true,
+    "module": "commonjs",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "rootDir": "src",
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "typeRoots": [
+    "./types",
+    "./node_modules/@types"
+ ]
+}
+
