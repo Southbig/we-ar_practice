@@ -18,3 +18,7 @@
 ### 공이 2개이상 즉 3개 부딪히면 겹쳐지는 현상이 일어난다
 ### 자바스크립트를 타입스크립트로 변환시 에러발생
 <img width="456" alt="스크린샷 2022-04-24 오후 11 16 25" src="https://user-images.githubusercontent.com/83868259/164980821-72db0461-7c80-4f07-85ce-bbbd5be7f023.png">
+
+## 작업과정 표기
+
+[작업과정 내용 바로가기](https://github.com/Southbig/we-ar_practice/tree/main/one_ball_bounce#readme)
